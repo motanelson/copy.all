@@ -40,6 +40,7 @@ namespace paints
                     ee = Graphics.FromImage(b);
                     Pen a = new Pen(Color.FromArgb(0, 0, 0));
                     ee.DrawLine(a, e.X, e.Y, xx, yy);
+                    a.Dispose();
                     ee.Dispose();
                     pictureBox1.Refresh();
                     
@@ -68,6 +69,41 @@ namespace paints
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.FileName = "";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "") 
+            { 
+             
+                pictureBox1.Image.Save(saveFileDialog1.FileName);
+            
+            }
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.FileName = "";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+
+                pictureBox1.Image.Save(saveFileDialog1.FileName);
+
+            }
+            ee = Graphics.FromImage(b);
+            Color a = Color.FromArgb(0, 0, 0);
+            ee.Clear(a);
+            
+            ee.Dispose();
+            pictureBox1.Refresh();
         }
     }
 }
