@@ -99,7 +99,7 @@ namespace paints
 
             }
             ee = Graphics.FromImage(b);
-            Color a = Color.FromArgb(0, 0, 0);
+            Color a = Color.FromArgb(0,0, 0, 0);
             ee.Clear(a);
             
             ee.Dispose();
